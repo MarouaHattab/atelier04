@@ -22,7 +22,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             height: 200,
           ),
           Container(
-            width: MediaQuery.of(context).size.width*0.2,
+            width: MediaQuery.of(context).size.width,
             //width:double.infinity,
             color: Colors.black,
             child: 
@@ -32,16 +32,29 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
           ),
-          
-          Row(
-            children: [
-              Column(
-                children: [
-                  Image.asset(MesImages.imagesCategories[0]),
-                  Text(MesImages.textImageCategories[0]),
-                ],
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width*0.4,
+                      height: MediaQuery.of(context).size.width*0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(MesImages.imagesCategories[0],fit: BoxFit.cover ,),
+                          Text(MesImages.textImageCategories[0])
+                        ],
+                      )),
+                    
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
