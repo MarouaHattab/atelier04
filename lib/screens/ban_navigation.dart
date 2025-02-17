@@ -15,7 +15,11 @@ class _BarNavigationScreenState extends State<BarNavigationScreen> {
         title: Text('nav page'),
       ),
       body: Text('nav bar'),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.blue,
+        selectedItemColor: Colors.white,
+        items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
         BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Liste Produit'),
         BottomNavigationBarItem(
