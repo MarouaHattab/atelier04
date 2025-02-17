@@ -21,12 +21,14 @@ class _HomePageScreenState extends State<HomePageScreen> {
             height: 200,
           ),
           Container(
-            //width: MediaQuery.of(context).size.width*0.5,
-            width:double.infinity,
+            width: MediaQuery.of(context).size.width*0.2,
+            //width:double.infinity,
             color: Colors.black,
             child: 
-            Text('Catégories',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            Center(
+              child: Text('Catégories',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              ),
             ),
           )
         ],
