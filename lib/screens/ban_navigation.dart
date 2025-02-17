@@ -22,7 +22,7 @@ class _BarNavigationScreenState extends State<BarNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePageScreen(),
+      body: screens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.pinkAccent,
