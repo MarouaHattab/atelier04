@@ -8,17 +8,16 @@ class BarNavigationScreen extends StatefulWidget {
 }
 
 class _BarNavigationScreenState extends State<BarNavigationScreen> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('nav page'),
-      ),
-      body: Text('nav bar'),
+      
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.pinkAccent,
         selectedItemColor: Colors.white,
+        currentIndex: selectedIndex,
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
         BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Liste Produit'),
