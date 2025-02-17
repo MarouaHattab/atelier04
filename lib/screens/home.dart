@@ -1,3 +1,4 @@
+import 'package:atelier04/const/mes_images.dart';
 import 'package:flutter/material.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -27,10 +28,21 @@ class _HomePageScreenState extends State<HomePageScreen> {
             child: 
             Center(
               child: Text('Catégories',
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 12),
               ),
             ),
-          )
+          ),
+          
+          Row(
+            children: [
+              Column(
+                children: [
+                  Image.asset(MesImages.imagesCategories[0]),
+                  Text(MesImages.textImageCategories[0]),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
       
