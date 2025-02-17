@@ -14,7 +14,23 @@ class _HomePageScreenState extends State<HomePageScreen> {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body:  Text('Welcome to Home Page'),
+      body:  Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 200,
+          ),
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            width:double.infinity,
+            color: Colors.black,
+            child: 
+            Text('Catégories',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            ),
+          )
+        ],
+      ),
       
     );
   }
