@@ -12,8 +12,6 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   bool isFavorite = false;
-  int quantity = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,13 +71,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       children: [
                         _buildDetailRow(
                             'Price :', '${widget.product.price} DNT'),
-                        const Divider(),
+                        
                         _buildDetailRow(
                             'Marque :', widget.product.marque ?? 'Unknown'),
-                        const Divider(),
+                       
                         _buildDetailRow('Category :',
                             widget.product.produitCategoryName ?? 'General'),
-                        const Divider(),
+                        
                         _buildDetailRow(
                             'Quantity :', '${widget.product.quantity}' ?? '0'),
                       ],
@@ -101,7 +99,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 15),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+
+                            SnackBar snackBar = SnackBar(
+                              content: Text('Product added to cart'),
+                              duration: const Duration(seconds: 2),
+                              backgroundColor: Colors.green,
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                          },
                         ),
                       ),
                       const SizedBox(width: 10),
@@ -116,7 +123,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             padding: const EdgeInsets.symmetric(vertical: 15),
                           ),
                           onPressed: () {
-                            // Buy now functionality
+                             SnackBar snackBar = SnackBar(
+                              content: Text('button Buy Now clicked'),
+                              duration: const Duration(seconds: 2),
+                              backgroundColor: Colors.red,
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
                           },
                         ),
                       ),

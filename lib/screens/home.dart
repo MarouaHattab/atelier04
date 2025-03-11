@@ -29,7 +29,6 @@ class _HomePageScreenState extends State<HomePageScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Carousel widget with improved styling
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 8.0),
                     height: 200.0,

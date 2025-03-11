@@ -1,5 +1,5 @@
 class Produit {
-  int id;
+  String id;
   String title;
   String description;
   double price;
@@ -27,7 +27,8 @@ class Produit {
   get getFavorite => isFavorite;
   get getMarque => marque;
   get getProduitCategoryName => produitCategoryName;
-
+  
+  set setId(String id) => this.id = id;
   get category => null;
   set setQuantity(int quantity) => this.quantity = quantity;
   set setTitle(String title) => this.title = title;
@@ -38,4 +39,5 @@ class Produit {
   set setMarque(String marque) => this.marque = marque;
   set setProduitCategoryName(String produitCategoryName) =>
       this.produitCategoryName = produitCategoryName;
+  
 }
