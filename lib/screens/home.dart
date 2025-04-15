@@ -1,4 +1,5 @@
 import 'package:atelier04/const/mes_images.dart';
+import 'package:atelier04/my_Widgets/Menu-widget.dart';
 import 'package:atelier04/my_Widgets/categories-widget.dart';
 import 'package:flutter/material.dart';
 import 'package:lecle_flutter_carousel_pro/lecle_flutter_carousel_pro.dart';
@@ -14,6 +15,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer:Menu(),
       appBar: AppBar(
         title: Center(child: Text('Home Page',style: TextStyle(color: Colors.white),)),
         backgroundColor: Colors.pinkAccent,

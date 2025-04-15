@@ -1,5 +1,7 @@
 import 'package:atelier04/model/produit.dart';
+import 'package:atelier04/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final Produit product;
@@ -73,13 +75,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             'Price :', '${widget.product.price} DNT'),
                         
                         _buildDetailRow(
-                            'Marque :', widget.product.marque ?? 'Unknown'),
+                            'Marque :', widget.product.marque ),
                        
                         _buildDetailRow('Category :',
-                            widget.product.produitCategoryName ?? 'General'),
+                            widget.product.produitCategoryName ),
                         
                         _buildDetailRow(
-                            'Quantity :', '${widget.product.quantity}' ?? '0'),
+                            'Quantity :', '${widget.product.quantity}'),
                       ],
                     ),
                   ),
@@ -100,14 +102,32 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             padding: const EdgeInsets.symmetric(vertical: 15),
                           ),
                           onPressed: () {
+                            Provider.of<PanierProvider>(context, listen: false)
+                                .ajouterProduit(
+                                    widget.product.id,
+                                    widget.product.price,
+                                    widget.product.title,
+                                    widget.product.description,
+                                    widget.product.imageUrl);
 
                             SnackBar snackBar = SnackBar(
                               content: Text('Product added to cart'),
                               duration: const Duration(seconds: 2),
-                              backgroundColor: Colors.green,
+                              backgroundColor: Colors.blueAccent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                            
+                              ),
+                              behavior: SnackBarBehavior.floating,
+                              
+                              action: SnackBarAction(
+                                label: 'ok',
+                                onPressed: () {
+                                  // Add undo functionality here
+                                },
+                              )
                             );
                             ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
                           },
                         ),
                       ),
@@ -153,7 +173,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
     );
   }
-
   Widget _buildDetailRow(String label, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),

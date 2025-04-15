@@ -137,3 +137,6 @@ class _ListeProduitScreenState extends State<ListeProduitScreen> {
     );
   }
 }
+// Produit findOneByID(String id) {
+//   return _produit.firstWhere((element) => element.id == id);
+// }
