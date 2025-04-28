@@ -1,37 +1,27 @@
-import 'package:atelier04/provider/cart_provider.dart';
-import 'package:atelier04/screens/ban_navigation.dart';
-import 'package:atelier04/screens/home.dart';
-import 'package:atelier04/screens/liste_produit.dart';
-import 'package:atelier04/screens/panier.dart';
-import 'package:atelier04/screens/user_info.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import './/atelier_02/exercice02.dart';
+import './atelier_02/exercice04.dart';
+import './atelier_03/changer_clolor.dart';
+import './atelier_03/class_Image_gridview.dart';
+import './atelier_03/class_changer_icones.dart';
+import './atelier_03/class_image_internet.dart';
 
-void main()
-{
-   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => PanierProvider())
-      ],
-      child: Ecommerce(),
-    ),
-  );
+void main() {
+  runApp(MyApp());
 }
-class Ecommerce extends StatelessWidget {
-  const Ecommerce({super.key});
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        '/home':(context) => HomePageScreen(),
-        '/listproduit':(context) => ListeProduitScreen(),
-        '/panier':(context) => PanierScreen(),
-        '/profiluser':(context) => UserInfoScreen(),
-
-      },
-      home :
-    BarNavigationScreen(),
-    debugShowCheckedModeBanner: false, );
+      home: ImageGridV(),
+      //ImageFromInternet(),
+      //ChangerIcones(),
+      //Exercice1(),
+      //Exercice4(),
+      //ChangeBackgroundColor(),
+    );
   }
 }
